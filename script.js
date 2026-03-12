@@ -15,20 +15,50 @@ document.addEventListener('DOMContentLoaded', function () {
   var navMenuBtn = document.getElementById('nav-menu-btn');
   var menuCloseBtn = document.getElementById('menu-modal-close');
 
+  var menuOpenTrigger = null;
+
   function openMenu(e) {
     if (e) e.preventDefault();
+    menuOpenTrigger = document.activeElement;
     menuModal.classList.add('open');
     document.body.style.overflow = 'hidden';
     // Close mobile nav if open
     navLinks.classList.remove('open');
     hamburger.classList.remove('active');
     hamburger.setAttribute('aria-expanded', 'false');
+    // Focus the close button for accessibility
+    menuCloseBtn.focus();
   }
 
   function closeMenu() {
     menuModal.classList.remove('open');
     document.body.style.overflow = '';
+    // Return focus to the element that opened the modal
+    if (menuOpenTrigger) {
+      menuOpenTrigger.focus();
+      menuOpenTrigger = null;
+    }
   }
+
+  // Trap focus inside the modal when open
+  menuModal.addEventListener('keydown', function (e) {
+    if (e.key !== 'Tab') return;
+    var focusable = menuModal.querySelectorAll('button, [href], [tabindex]:not([tabindex="-1"])');
+    if (focusable.length === 0) return;
+    var first = focusable[0];
+    var last = focusable[focusable.length - 1];
+    if (e.shiftKey) {
+      if (document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      }
+    } else {
+      if (document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+  });
 
   heroMenuBtn.addEventListener('click', openMenu);
   navMenuBtn.addEventListener('click', openMenu);
@@ -119,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // ---- SMOOTH SCROLLING ----
-  document.querySelectorAll('.nav-links a, .btn-cta').forEach(function (anchor) {
+  document.querySelectorAll('.nav-links a').forEach(function (anchor) {
     anchor.addEventListener('click', function (e) {
       var href = this.getAttribute('href');
       if (href && href.startsWith('#')) {
@@ -195,4 +225,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
   updateActiveNav();
   updateNavbar();
+
+  // ---- DYNAMIC COPYRIGHT YEAR ----
+  var yearEl = document.getElementById('footer-year');
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
 });
