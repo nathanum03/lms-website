@@ -43,6 +43,8 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 
 img {
@@ -146,10 +148,32 @@ ul {
   transition: color 0.25s ease, background 0.25s ease;
 }
 
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--brown-light);
+  border-radius: 1px;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.nav-links a {
+  position: relative;
+}
+
 .nav-links a:hover,
 .nav-links a.active {
   color: var(--warm-cream);
   background: rgba(255, 255, 255, 0.06);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 60%;
 }
 
 .nav-links a.nav-call-btn {
@@ -160,6 +184,10 @@ ul {
   font-weight: 600;
   letter-spacing: 1px;
   transition: background 0.25s ease, transform 0.15s ease;
+}
+
+.nav-links a.nav-call-btn::after {
+  display: none;
 }
 
 .nav-links a.nav-call-btn:hover {
@@ -206,9 +234,6 @@ ul {
 .hero {
   margin-top: var(--nav-height);
   background: var(--charcoal);
-  background-image: url('Collage/collage-bg.jpg');
-  background-size: cover;
-  background-position: center;
   padding: 80px 24px 100px;
   text-align: center;
   position: relative;
@@ -218,6 +243,17 @@ ul {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+/* Parallax background layer */
+.hero-bg {
+  position: absolute;
+  inset: -8%;
+  background-image: url('Collage/collage-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+  z-index: 0;
 }
 
 /* Dark overlay so logo and text stand out over the collage */
@@ -386,7 +422,7 @@ ul {
   height: 40px;
   background: linear-gradient(to bottom, transparent, rgba(247, 242, 232, 0.6));
   opacity: 0.4;
-  animation: scrollPulse 2s ease-in-out infinite;
+  animation: scrollBounce 2s ease-in-out infinite;
 }
 
 /* ===================================
@@ -423,7 +459,6 @@ ul {
    MENU MODAL
    =================================== */
 .menu-modal-overlay {
-  display: none;
   position: fixed;
   inset: 0;
   z-index: 2000;
@@ -432,10 +467,17 @@ ul {
   align-items: flex-start;
   padding: 40px 20px;
   overflow-y: auto;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  display: flex;
 }
 
 .menu-modal-overlay.open {
-  display: flex;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .menu-modal {
@@ -705,6 +747,22 @@ ul {
 }
 
 /* ===================================
+   SECTION DIVIDER — Mountain Silhouette
+   =================================== */
+.section-divider {
+  position: relative;
+  width: 100%;
+  line-height: 0;
+  margin-top: -1px;
+}
+
+.section-divider svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ===================================
    CONTACT / FOOTER
    =================================== */
 .contact-section {
@@ -712,18 +770,6 @@ ul {
   color: var(--warm-cream);
   padding: 72px 0 48px;
   position: relative;
-}
-
-/* Subtle top border accent */
-.contact-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, var(--brown-light), var(--blue), var(--brown-light), transparent);
-  opacity: 0.4;
 }
 
 .section-title--light {
@@ -744,12 +790,34 @@ ul {
   background: rgba(255, 255, 255, 0.03);
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.06);
-  transition: border-color 0.3s ease, background 0.3s ease;
+  transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .contact-card:hover {
   border-color: rgba(255, 255, 255, 0.12);
   background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* Staggered scroll-reveal for contact cards */
+.contact-card {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.contact-card.revealed {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease, transform 0.6s ease, border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card.revealed:nth-child(1) { transition-delay: 0s; }
+.contact-card.revealed:nth-child(2) { transition-delay: 0.15s; }
+.contact-card.revealed:nth-child(3) { transition-delay: 0.3s; }
+
+.contact-card.revealed:hover {
+  transform: translateY(-4px);
 }
 
 .contact-icon {
@@ -868,14 +936,33 @@ ul {
     border-radius: 0;
   }
 
+  .nav-links a::after {
+    display: none;
+  }
+
+  .nav-links a.nav-call-btn {
+    margin: 8px 24px;
+    text-align: center;
+    border-radius: 6px;
+    width: auto;
+  }
+
   .nav-title {
     font-size: 1.1rem;
+  }
+
+  .nav-logo {
+    height: 36px;
   }
 
   /* Hero */
   .hero {
     padding: 56px 20px 72px;
     min-height: 75vh;
+  }
+
+  .hero-content {
+    padding: 48px 20px;
   }
 
   .hero-logo {
@@ -906,6 +993,11 @@ ul {
   .hero-ink--2 {
     width: 250px;
     height: 250px;
+  }
+
+  /* Disable parallax on mobile for performance */
+  .hero-bg {
+    inset: 0;
   }
 
   /* Menu */
@@ -940,7 +1032,25 @@ ul {
     padding: 0 20px 24px;
   }
 
+  .menu-tabs {
+    gap: 4px;
+  }
+
+  .tab-btn {
+    padding: 7px 14px;
+    font-size: 0.75rem;
+  }
+
+  .menu-legend {
+    gap: 16px;
+    font-size: 0.8rem;
+  }
+
   /* Contact */
+  .contact-section {
+    padding: 56px 0 36px;
+  }
+
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 14px;
@@ -949,18 +1059,52 @@ ul {
   .contact-card {
     padding: 24px 16px;
   }
+
+  /* Map */
+  .map-container iframe {
+    height: 220px;
+  }
+
+  /* Footer */
+  .footer-bottom p {
+    font-size: 0.72rem;
+    text-align: center;
+  }
+
+  /* Mountain divider height on smaller screens */
+  .section-divider svg {
+    height: 40px;
+  }
 }
 
 /* ===================================
    RESPONSIVE - SMALL (480px)
    =================================== */
 @media (max-width: 480px) {
+  .hero {
+    padding: 40px 16px 60px;
+    min-height: 70vh;
+  }
+
+  .hero-content {
+    padding: 36px 16px;
+  }
+
   .hero-logo {
     width: 160px;
   }
 
   .hero-text-img {
     width: 260px;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .hero-hours {
+    font-size: 0.75rem;
+    margin-bottom: 28px;
   }
 
   .btn-cta {
@@ -970,6 +1114,38 @@ ul {
 
   .section-title {
     font-size: 1.6rem;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .item-name {
+    font-size: 0.85rem;
+  }
+
+  .item-price {
+    font-size: 0.85rem;
+  }
+
+  .item-desc {
+    font-size: 0.72rem;
+  }
+
+  .contact-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .contact-card p {
+    font-size: 0.88rem;
+  }
+
+  .map-container iframe {
+    height: 180px;
+  }
+
+  .section-divider svg {
+    height: 30px;
   }
 }
 
@@ -1020,13 +1196,13 @@ ul {
   }
 }
 
-@keyframes scrollPulse {
+@keyframes scrollBounce {
   0%, 100% {
-    opacity: 0.15;
-    transform: scaleY(1);
+    opacity: 0.2;
+    transform: translateY(0);
   }
   50% {
-    opacity: 0.4;
-    transform: scaleY(1.15);
+    opacity: 0.5;
+    transform: translateY(8px);
   }
 }

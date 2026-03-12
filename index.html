@@ -13,7 +13,41 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="logo-clean.png">
   <meta property="og:image" content="logo-clean.png">
+  <link rel="preload" href="Collage/collage-bg.jpg" as="image">
   <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Little Mountain Sushi",
+    "image": "logo-clean.png",
+    "url": "",
+    "telephone": "+1-604-392-5588",
+    "servesCuisine": ["Japanese", "Sushi"],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "46675 Yale Road #102",
+      "addressLocality": "Chilliwack",
+      "addressRegion": "BC",
+      "postalCode": "V2P 7Z4",
+      "addressCountry": "CA"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 49.1577,
+      "longitude": -121.9453
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "10:30",
+      "closes": "21:30"
+    },
+    "priceRange": "$$",
+    "menu": "",
+    "acceptsReservations": "false"
+  }
+  </script>
 </head>
 <body>
 
@@ -39,6 +73,8 @@
 
   <!-- HERO SECTION -->
   <section class="hero" id="hero">
+    <!-- Parallax background -->
+    <div class="hero-bg" aria-hidden="true"></div>
     <!-- Decorative ink wash circles -->
     <div class="hero-ink hero-ink--1" aria-hidden="true"></div>
     <div class="hero-ink hero-ink--2" aria-hidden="true"></div>
@@ -482,6 +518,13 @@
       </div>
       </div>
     </div>
+  </div>
+
+  <!-- Mountain Silhouette Divider -->
+  <div class="section-divider" aria-hidden="true">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,80 L0,50 Q60,42 120,48 L200,40 L280,52 L340,30 Q380,18 420,28 L480,38 L540,22 L600,35 Q660,45 720,20 L780,10 Q820,0 860,12 L920,28 L980,18 Q1020,8 1060,22 L1120,36 L1180,24 L1240,40 Q1300,50 1360,44 L1440,48 L1440,80 Z" fill="#2E2520"/>
+    </svg>
   </div>
 
   <!-- CONTACT / FOOTER -->

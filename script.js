@@ -214,17 +214,55 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // ---- PARALLAX HERO BACKGROUND ----
+  var heroBg = document.querySelector('.hero-bg');
+  var hero = document.getElementById('hero');
+  var isMobile = window.matchMedia('(max-width: 768px)').matches;
+
+  function updateParallax() {
+    if (!heroBg || !hero || isMobile) return;
+    var heroBottom = hero.offsetTop + hero.offsetHeight;
+    if (window.pageYOffset < heroBottom) {
+      var offset = window.pageYOffset * 0.35;
+      heroBg.style.transform = 'translate3d(0,' + offset + 'px,0)';
+    }
+  }
+
+  // ---- STAGGERED CONTACT CARD REVEAL ----
+  var contactCards = document.querySelectorAll('.contact-card');
+  if ('IntersectionObserver' in window) {
+    var cardObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          cardObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    contactCards.forEach(function (card) {
+      cardObserver.observe(card);
+    });
+  } else {
+    // Fallback: show all cards immediately
+    contactCards.forEach(function (card) {
+      card.classList.add('revealed');
+    });
+  }
+
   var scrollRAF;
   window.addEventListener('scroll', function () {
     if (scrollRAF) cancelAnimationFrame(scrollRAF);
     scrollRAF = requestAnimationFrame(function () {
       updateNavbar();
       updateActiveNav();
+      updateParallax();
     });
   });
 
   updateActiveNav();
   updateNavbar();
+  updateParallax();
 
   // ---- DYNAMIC COPYRIGHT YEAR ----
   var yearEl = document.getElementById('footer-year');
