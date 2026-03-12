@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Little Mountain Sushi - Fresh Japanese Cuisine in Chilliwack, BC. Sushi, sashimi, rolls, teriyaki, noodles and more. Open daily 10:30am - 9:30pm.">
+  <meta property="og:title" content="Little Mountain Sushi">
+  <meta property="og:description" content="Fresh Japanese Cuisine in Chilliwack, BC. Open daily 10:30am - 9:30pm.">
+  <meta property="og:type" content="restaurant">
+  <title>Little Mountain Sushi | Fresh Japanese Cuisine in Chilliwack</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-brand">
+        <img src="logo-clean.png" alt="Little Mountain Sushi Logo" class="nav-logo">
+        <span class="nav-title">Little Mountain Sushi</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="tel:+16043925588" class="nav-call-btn">Call to Order</a></li>
+        <li><a href="#" id="nav-menu-btn">Menu</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="hero">
+    <!-- Decorative ink wash circles -->
+    <div class="hero-ink hero-ink--1" aria-hidden="true"></div>
+    <div class="hero-ink hero-ink--2" aria-hidden="true"></div>
+
+    <div class="hero-content">
+
+      <div class="hero-logo-wrap">
+        <img src="logo-clean.png" alt="Little Mountain Sushi mountain logo" class="hero-logo">
+      </div>
+      <div class="hero-text-wrap">
+        <img src="text-clean.png" alt="Little Mountain Sushi" class="hero-text-img">
+      </div>
+
+      <div class="hero-divider" aria-hidden="true">
+        <svg viewBox="0 0 120 2" xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="1" x2="120" y2="1" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 6" /></svg>
+      </div>
+      <p class="hero-subtitle">Chilliwack, BC</p>
+      <p class="hero-hours">Open Daily 10:30 am &ndash; 9:30 pm</p>
+      <button class="btn-cta" id="hero-menu-btn">View Our Menu</button>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-hint" aria-hidden="true">
+      <div class="scroll-hint-line"></div>
+    </div>
+  </section>
+
+  <!-- MENU MODAL -->
+  <div class="menu-modal-overlay" id="menu-modal">
+    <div class="menu-modal">
+      <div class="menu-modal-header">
+        <h2 class="section-title">Our Menu</h2>
+        <button class="menu-modal-close" id="menu-modal-close" aria-label="Close menu">&times;</button>
+      </div>
+      <div class="menu-modal-body">
+
+      <!-- Menu Legend -->
+      <div class="menu-legend">
+        <span class="legend-item"><span class="spicy-dot"></span> Spicy</span>
+        <span class="legend-item"><span class="veg-badge">V</span> Vegetarian</span>
+      </div>
+
+      <!-- Category Tabs -->
+      <div class="menu-tabs-wrapper">
+        <div class="menu-tabs" id="menu-tabs">
+          <button class="tab-btn active" data-target="all">All</button>
+          <button class="tab-btn" data-target="appetizer">Appetizer</button>
+          <button class="tab-btn" data-target="soup-salad">Soup &amp; Salad</button>
+          <button class="tab-btn" data-target="sunomono">Sunomono</button>
+          <button class="tab-btn" data-target="tempura">Tempura</button>
+          <button class="tab-btn" data-target="sashimi">Sashimi</button>
+          <button class="tab-btn" data-target="nigiri">Nigiri</button>
+          <button class="tab-btn" data-target="aburi">Aburi</button>
+          <button class="tab-btn" data-target="oshi">Oshi</button>
+          <button class="tab-btn" data-target="hand-roll">Hand Roll</button>
+          <button class="tab-btn" data-target="small-roll">Small Roll</button>
+          <button class="tab-btn" data-target="medium-roll">Medium Roll</button>
+          <button class="tab-btn" data-target="large-roll">Large Roll</button>
+          <button class="tab-btn" data-target="special-roll">Special Roll</button>
+          <button class="tab-btn" data-target="teriyaki">Teriyaki</button>
+          <button class="tab-btn" data-target="noodle">Noodle</button>
+          <button class="tab-btn" data-target="don">Don</button>
+          <button class="tab-btn" data-target="korean">Korean Special</button>
+          <button class="tab-btn" data-target="combo">Sushi Combo</button>
+          <button class="tab-btn" data-target="party-tray">Party Tray</button>
+          <button class="tab-btn" data-target="lunch-set">Lunch Set</button>
+          <button class="tab-btn" data-target="dinner-set">Dinner Set</button>
+          <button class="tab-btn" data-target="drinks">Drinks &amp; Liquor</button>
+        </div>
+      </div>
+
+      <!-- Menu Categories -->
+      <div class="menu-categories" id="menu-categories">
+
+        <!-- APPETIZER -->
+        <div class="menu-category" data-category="appetizer">
+          <h3 class="category-title">Appetizer</h3>
+          <ul class="menu-list">
+            <li class="menu-item veg"><span class="item-name"><span class="veg-badge">V</span> Edamame</span><span class="item-price">$7.29</span><span class="item-desc">Steamed salted soybean pods</span></li>
+            <li class="menu-item veg"><span class="item-name"><span class="veg-badge">V</span> Spinach Gomae</span><span class="item-price">$7.99</span><span class="item-desc">Blanched spinach with sweet sesame sauce</span></li>
+            <li class="menu-item"><span class="item-name">Croquette 3pcs</span><span class="item-price">$7.29</span><span class="item-desc">Crispy breaded potato croquettes, deep fried</span></li>
+            <li class="menu-item"><span class="item-name">Spring Roll 6pcs</span><span class="item-price">$7.99</span><span class="item-desc">Crispy fried rolls with seasoned vegetable filling</span></li>
+            <li class="menu-item veg"><span class="item-name"><span class="veg-badge">V</span> Agedashi Tofu</span><span class="item-price">$8.50</span><span class="item-desc">Lightly battered fried tofu in dashi broth</span></li>
+            <li class="menu-item spicy veg"><span class="item-name"><span class="spicy-dot"></span><span class="veg-badge">V</span> Spicy Agedashi Tofu</span><span class="item-price">$9.50</span><span class="item-desc">Fried tofu in dashi broth with spicy chili sauce</span></li>
+            <li class="menu-item"><span class="item-name">Takoyaki 6pcs</span><span class="item-price">$8.50</span><span class="item-desc">Octopus balls topped with bonito flakes and mayo</span></li>
+            <li class="menu-item"><span class="item-name">Deep Gyoza 6pcs</span><span class="item-price">$9.50</span><span class="item-desc">Deep fried pork and vegetable dumplings</span></li>
+            <li class="menu-item"><span class="item-name">Gyoza 6pcs</span><span class="item-price">$9.95</span><span class="item-desc">Pan-fried pork and vegetable dumplings</span></li>
+            <li class="menu-item veg"><span class="item-name"><span class="veg-badge">V</span> Vege Gyoza 6pcs</span><span class="item-price">$9.95</span><span class="item-desc">Pan-fried vegetable dumplings, no meat</span></li>
+            <li class="menu-item spicy"><span class="item-name"><span class="spicy-dot"></span> Spicy Age Gyoza 6pcs</span><span class="item-price">$9.95</span><span class="item-desc">Deep fried dumplings with spicy dipping sauce</span></li>
+            <li class="menu-item"><span class="item-name">Calamari</span><span class="item-price">$10.95</span><span class="item-desc">Lightly battered and fried squid rings</span></li>
+            <li class="menu-item spicy"><span class="item-name"><span class="spicy-dot"></span> Jalapeno Bomb</span><span class="item-price">$13.50</span><span class="item-desc">Cream cheese stuffed jalapenos, deep fried</span></li>
+            <li class="menu-item"><span class="item-name">Chicken Karaage</span><span class="item-price">$12.99</span><span class="item-desc">Japanese-style marinated fried chicken pieces</span></li>
+            <li class="menu-item spicy"><span class="item-name"><span class="spicy-dot"></span> Spicy Chicken Karaage</span><span class="item-price">$13.59</span><span class="item-desc">Japanese fried chicken tossed in spicy sauce</span></li>
+          </ul>
+        </div>
+
+        <!-- SOUP & SALAD -->
+        <div class="menu-category" data-category="soup-salad">
+          <h3 class="category-title">Soup &amp; Salad</h3>
+          <ul class="menu-list">
+            <li class="menu-item veg"><span class="item-name"><span class="veg-badge">V</span> Miso Soup</span><span class="item-price">$1.95</span><span class="item-desc">Traditional dashi broth with tofu and wakame</span></li>
+            <li class="menu-item veg"><span class="item-name"><span class="veg-badge">V</span> Steamed Rice</span><span class="item-price">$2.50</span><span class="item-desc">Plain steamed Japanese short-grain white rice</span></li>
+            <li class="menu-item veg"><span class="item-name"><span class="veg-badge">V</span> Sushi Rice</span><span class="item-price">$3.50</span><span class="item-desc">Seasoned vinegared rice, sushi style</span></li>
+            <li class="menu-item"><span class="item-name">Gyoza Nabe</span><span class="item-price">$7.50</span><span class="item-desc">Hot pot soup with gyoza dumplings in savory broth</span></li>
+            <li class="menu-item veg"><span class="item-name"><span class="veg-badge">V</span> Seaweed Salad</span><span class="item-price">$7.50</span><span class="item-desc">Seasoned mixed seaweed with sesame dressing</span></li>
+            <li class="menu-item veg"><span class="item-name"><span class="veg-badge">V</span> House Salad</span><span class="item-price">$8.99</span><span class="item-desc">Fresh greens with Japanese ginger dressing</span></li>
+          </ul>
+        </div>
+
+        <!-- SUNOMONO -->
+        <div class="menu-category" data-category="sunomono">
+          <h3 class="category-title">Sunomono</h3>
+          <ul class="menu-list">
+            <li class="menu-item veg"><span class="item-name"><span class="veg-badge">V</span> Vege</span><span class="item-price">$6.99</span><span class="item-desc">Cucumber in sweet rice vinegar dressing</span></li>
+            <li class="menu-item"><span class="item-name">Ebi</span><span class="item-price">$7.29</span><span class="item-desc">Cucumber and shrimp in sweet vinegar dressing</span></li>
+            <li class="menu-item"><span class="item-name">Tako</span><span class="item-price">$7.29</span><span class="item-desc">Cucumber and octopus in sweet vinegar dressing</span></li>
+            <li class="menu-item"><span class="item-name">Kani</span><span class="item-price">$7.29</span><span class="item-desc">Cucumber and crab in sweet vinegar dressing</span></li>
+          </ul>
+        </div>
+
+        <!-- TEMPURA -->
+        <div class="menu-category" data-category="tempura">
+          <h3 class="category-title">Tempura</h3>
+          <ul class="menu-list">
+            <li class="menu-item"><span class="item-name">Appetizer Tempura 6pcs</span><span class="item-price">$11.29</span><span class="item-desc">Assorted lightly battered and deep fried pieces</span></li>
+            <li class="menu-item veg"><span class="item-name"><span class="veg-badge">V</span> Vege Tempura 8pcs</span><span class="item-price">$13.95</span><span class="item-desc">Seasonal vegetables in light crispy tempura batter</span></li>
+            <li class="menu-item veg"><span class="item-name"><span class="veg-badge">V</span> Yam Tempura</span><span class="item-price">4pcs $8.99 / 8pcs $14.99</span><span class="item-desc">Sweet yam in light crispy tempura batter</span></li>
+            <li class="menu-item"><span class="item-name">Prawn Tempura</span><span class="item-price">4pcs $8.99 / 8pcs $17.95</span><span class="item-desc">Whole prawns in light crispy tempura batter</span></li>
+            <li class="menu-item"><span class="item-name">Assorted Tempura 11pcs</span><span class="item-price">$18.99</span><span class="item-desc">Prawns and vegetables in light tempura batter</span></li>
+            <li class="menu-item"><span class="item-name">Deluxe Tempura 14pcs</span><span class="item-price">$21.99</span><span class="item-desc">Premium assortment of prawns and vegetables, battered and fried</span></li>
+          </ul>
+        </div>
+
+        <!-- SASHIMI -->
+        <div class="menu-category" data-category="sashimi">
+          <h3 class="category-title">Sashimi</h3>
+          <ul class="menu-list">
+            <li class="menu-item"><span class="item-name">Appetizer Sashimi</span><span class="item-price">$15.99</span><span class="item-desc">Chef's selection of fresh sliced raw fish</span></li>
+            <li class="menu-item"><span class="item-name">Tuna Tataki Sashimi</span><span class="item-price">$19.95</span><span class="item-desc">Lightly seared tuna slices with ponzu and green onion</span></li>
+            <li class="menu-item"><span class="item-name">Salmon Sashimi</span><span class="item-price">4pcs $11.50 / 8pcs $20.95</span><span class="item-desc">Sliced fresh Atlantic salmon, served raw</span></li>
+            <li class="menu-item"><span class="item-name">Tuna Sashimi</span><span class="item-price">4pcs $11.50 / 8pcs $20.95</span><span class="item-desc">Sliced fresh bluefin tuna, served raw</span></li>
+            <li class="menu-item"><span class="item-name">Salmon &amp; Tuna Sashimi</span><span class="item-price">$20.95</span><span class="item-desc">Combination of sliced fresh salmon and tuna</span></li>
+            <li class="menu-item"><span class="item-name">Sockeye Salmon Sashimi</span><span class="item-price">$23.95</span><span class="item-desc">Sliced premium wild sockeye salmon, served raw</span></li>
+            <li class="menu-item"><span class="item-name">Toro Sashimi</span><span class="item-price">$23.95</span><span class="item-desc">Sliced fatty tuna belly, rich and buttery</span></li>
+            <li class="menu-item spicy"><span class="item-name"><span class="spicy-dot"></span> Spicy Sashimi</span><span class="item-price">$23.50</span><span class="item-desc">Chef's sashimi selection with spicy chili sauce</span></li>
+            <li class="menu-item spicy"><span class="item-name"><span class="spicy-dot"></span> Little Mountain Spicy Sashimi Tower</span><span class="item-price">$24.95</span><span class="item-desc">Layered sashimi tower with spicy sauce and toppings</span></li>
+            <li class="menu-item"><span class="item-name">Assorted Sashimi</span><span class="item-price">$34.95</span><span class="item-desc">Chef's selection of multiple fresh fish varieties</span></li>
+            <li class="menu-item"><span class="item-name">Deluxe Assorted Sashimi</span><span class="item-price">$40.95</span><span class="item-desc">Premium multi-fish sashimi platter with seasonal highlights</span></li>
+          </ul>
+        </div>
+
+        <!-- NIGIRI -->
+        <div class="menu-category" data-category="nigiri">
+          <h3 class="category-title">Nigiri Sushi</h3>
+          <ul class="menu-list">
+            <li class="menu-item"><span class="item-name">Salmon</span><span class="item-price">$3.75</span><span class="item-desc">Fresh Atlantic salmon over pressed sushi rice</span></li>
+            <li class="menu-item"><span class="item-name">Tuna</span><span class="item-price">$3.75</span><span class="item-desc">Fresh bluefin tuna over pressed sushi rice</span></li>
+            <li class="menu-item veg"><span class="item-name"><span class="veg-badge">V</span> Inari</span><span class="item-price">$3.75</span><span class="item-desc">Sweet tofu pouch filled with seasoned sushi rice</span></li>
+            <li class="menu-item veg"><span class="item-name"><span class="veg-badge">V</span> Tamago</span><span class="item-price">$3.75</span><span class="item-desc">Sweet layered Japanese egg omelette over rice</span></li>
+            <li class="menu-item"><span class="item-name">Kani</span><span class="item-price">$3.75</span><span class="item-desc">Crab over pressed sushi rice</span></li>
+            <li class="menu-item"><span class="item-name">Ebi</span><span class="item-price">$3.95</span><span class="item-desc">Cooked tiger shrimp over pressed sushi rice</span></li>
+            <li class="menu-item"><span class="item-name">Tobiko</span><span class="item-price">$3.95</span><span class="item-desc">Flying fish roe over pressed sushi rice</span></li>
+            <li class="menu-item"><span class="item-name">Tako</span><span class="item-price">$3.95</span><span class="item-desc">Sliced cooked octopus over pressed sushi rice</span></li>
+            <li class="menu-item"><span class="item-name">Ika</span><span class="item-price">$4.25</span><span class="item-desc">Sliced squid over pressed sushi rice</span></li>
+            <li class="menu-item"><span class="item-name">Toro</span><span class="item-price">$4.25</span><span class="item-desc">Fatty tuna belly over pressed sushi rice</span></li>
+            <li class="menu-item"><span class="item-name">Sockeye</span><span class="item-price">$4.25</span><span class="item-desc">Wild sockeye salmon over pressed sushi rice</span></li>
+            <li class="menu-item"><span class="item-name">Chopped Scallop</span><span class="item-price">$4.25</span><span class="item-desc">Seasoned chopped scallop over pressed sushi rice</span></li>
+            <li class="menu-item"><span class="item-name">Unagi</span><span class="item-price">$4.25</span><span class="item-desc">Grilled freshwater eel with sweet tare sauce over rice</span></li>
+          </ul>
+        </div>
+
+        <!-- ABURI -->
+        <div class="menu-category" data-category="aburi">
+          <h3 class="category-title">Aburi Sushi <span class="category-subtitle">Torched</span></h3>
+          <ul class="menu-list">
+            <li class="menu-item"><span class="item-name">Salmon</span><span class="item-price">$3.95</span><span class="item-desc">Flame-torched salmon nigiri over sushi rice</span></li>
+            <li class="menu-item"><span class="item-name">Tuna</span><span class="item-price">$3.95</span><span class="item-desc">Flame-torched tuna nigiri over sushi rice</span></li>
+            <li class="menu-item"><span class="item-name">Ebi</span><span class="item-price">$3.95</span><span class="item-desc">Flame-torched shrimp nigiri over sushi rice</span></li>
+            <li class="menu-item"><span class="item-name">Tai</span><span class="item-price">$3.95</span><span class="item-desc">Flame-torched sea bream nigiri over sushi rice</span></li>
+            <li class="menu-item"><span class="item-name">Sockeye</span><span class="item-price">$4.25</span><span class="item-desc">Flame-torched wild sockeye salmon over sushi rice</span></li>
+            <li class="menu-item"><span class="item-name">Toro</span><span class="item-price">$4.25</span><span class="item-desc">Flame-torched fatty tuna belly over sushi rice</span></li>
+            <li class="menu-item"><span class="item-name">Aburi Plate 6pcs</span><span class="item-price">$21.95</span><span class="item-desc">Chef's selection of six torched nigiri pieces</span></li>
+          </ul>
+        </div>
+
+        <!-- OSHI -->
+        <div class="menu-category" data-category="oshi">
+          <h3 class="category-title">Oshi Sushi <span class="category-subtitle">Pressed Rice</span></h3>
+          <ul class="menu-list">
+            <li class="menu-item"><span class="item-name">Salmon Oshi</span><span class="item-price">$16.95</span><span class="item-desc">Pressed salmon over layered sushi rice, torched</span></li>
+            <li class="menu-item"><span class="item-name">Mango Oshi</span><span class="item-price">$16.95</span><span class="item-desc">Pressed sushi rice topped with fresh mango slices</span></li>
+            <li class="menu-item veg"><span class="item-name"><span class="veg-badge">V</span> Avo Oshi</span><span class="item-price">$16.95</span><span class="item-desc">Pressed sushi rice topped with fresh avocado</span></li>
+            <li class="menu-item"><span class="item-name">Ebi Oshi</span><span class="item-price">$16.95</span><span class="item-desc">Pressed shrimp over layered sushi rice, torched</span></li>
+            <li class="menu-item"><span class="item-name">Unagi Oshi</span><span class="item-price">$17.95</span><span class="item-desc">Pressed grilled eel over sushi rice with tare sauce</span></li>
+          </ul>
+        </div>
+
+        <!-- HAND ROLL -->
+        <div class="menu-category" data-category="hand-roll">
+          <h3 class="category-title">Hand Roll <span class="category-subtitle">Cone</span></h3>
+          <ul class="menu-list">
+            <li class="menu-item"><span class="item-name">California</span><span class="item-price">$6.99</span><span class="item-desc">Crab, avocado, cucumber in nori cone</span></li>
+            <li class="menu-item spicy"><span class="item-name"><span class="spicy-dot"></span> Spicy Tuna</span><span class="item-price">$8.99</span><span class="item-desc">Tuna with spicy mayo in nori cone</span></li>
+            <li class="menu-item spicy"><span class="item-name"><span class="spicy-dot"></span> Spicy Salmon</span><span class="item-price">$8.99</span><span class="item-desc">Salmon with spicy mayo in nori cone</span></li>
+            <li class="menu-item"><span class="item-name">Dynamite</span><span class="item-price">$9.29</span><span class="item-desc">Prawn tempura, cucumber, avocado in nori cone</span></li>
+            <li class="menu-item"><span class="item-name">Unagi</span><span class="item-price">$9.29</span><span class="item-desc">Grilled eel with cucumber and avocado in nori cone</span></li>
+            <li class="menu-item"><span class="item-name">Salmon Avocado</span><span class="item-price">$9.29</span><span class="item-desc">Fresh salmon and avocado in nori cone</span></li>
+            <li class="menu-item"><span class="item-name">Tuna Avocado</span><span class="item-price">$9.29</span><span class="item-desc">Fresh tuna and avocado in nori cone</span></li>
+            <li class="menu-item"><span class="item-name">Chopped Scallop</span><span class="item-price">$9.29</span><span class="item-desc">Seasoned chopped scallop in nori cone</span></li>
+            <li class="menu-item spicy"><span class="item-name"><span class="spicy-dot"></span> Spicy Chopped Scallop</span><span class="item-price">$9.29</span><span class="item-desc">Chopped scallop with spicy sauce in nori cone</span></li>
+            <li class="menu-item veg"><span class="item-name"><span class="veg-badge">V</span> Yam</span><span class="item-price">$9.29</span><span class="item-desc">Sweet yam tempura and avocado in nori cone</span></li>
+            <li class="menu-item"><span class="item-name">BC</span><span class="item-price">$9.29</span><span class="item-desc">Salmon, cucumber, and green onion in nori cone</span></li>
+          </ul>
+        </div>
+
+        <!-- SMALL ROLL -->
+        <div class="menu-category" data-category="small-roll">
+          <h3 class="category-title">Small Roll <span class="category-subtitle">Hoso Maki / 6pcs</span></h3>
+          <ul class="menu-list">
+            <li class="menu-item veg"><span class="item-name"><span class="veg-badge">V</span> Kappa</span><span class="item-price">$5.55</span><span class="item-desc">Thin cucumber roll in seasoned nori</span></li>
+            <li class="menu-item veg"><span class="item-name"><span class="veg-badge">V</span> Oshinko</span><span class="item-price">$5.55</span><span class="item-desc">Japanese pickled daikon radish roll</span></li>
+            <li class="menu-item veg"><span class="item-name"><span class="veg-badge">V</span> Tamago</span><span class="item-price">$6.55</span><span class="item-desc">Sweet Japanese egg omelette thin roll</span></li>
+            <li class="menu-item"><span class="item-name">Salmon</span><span class="item-price">$6.55</span><span class="item-desc">Fresh salmon thin roll in nori</span></li>
+            <li class="menu-item"><span class="item-name">Tuna</span><span class="item-price">$6.55</span><span class="item-desc">Fresh tuna thin roll in nori</span></li>
+            <li class="menu-item"><span class="item-name">Negitoro</span><span class="item-price">$7.25</span><span class="item-desc">Minced fatty tuna with green onion roll</span></li>
+            <li class="menu-item"><span class="item-name">Ebi</span><span class="item-price">$7.25</span><span class="item-desc">Cooked shrimp thin roll in nori</span></li>
+            <li class="menu-item"><span class="item-name">Smoked Salmon</span><span class="item-price">$8.25</span><span class="item-desc">Cold-smoked salmon thin roll in nori</span></li>
+          </ul>
+        </div>
+
+        <!-- MEDIUM ROLL -->
+        <div class="menu-category" data-category="medium-roll">
+          <h3 class="category-title">Medium Roll</h3>
+          <ul class="menu-list">
+            <li class="menu-item"><span class="item-name">California Roll</span><span class="item-price">$6.99</span><span class="item-desc">Crab, avocado, cucumber with masago</span></li>
+            <li class="menu-item veg"><span class="item-name"><span class="veg-badge">V</span> Avo Kappa Roll</span><span class="item-price">$7.50</span><span class="item-desc">Avocado and cucumber roll</span></li>
+            <li class="menu-item veg"><span class="item-name"><span class="veg-badge">V</span> Avocado Roll</span><span class="item-price">$7.50</span><span class="item-desc">Creamy avocado in seasoned nori and rice</span></li>
+            <li class="menu-item"><span class="item-name">Mango Roll</span><span class="item-price">$7.95</span><span class="item-desc">Fresh mango with avocado and cucumber</span></li>
+            <li class="menu-item spicy"><span class="item-name"><span class="spicy-dot"></span> Spicy Salmon Roll</span><span class="item-price">$8.95</span><span class="item-desc">Salmon with spicy mayo and cucumber</span></li>
+            <li class="menu-item spicy"><span class="item-name"><span class="spicy-dot"></span> Spicy Tuna Roll</span><span class="item-price">$8.95</span><span class="item-desc">Tuna with spicy mayo and cucumber</span></li>
+            <li class="menu-item"><span class="item-name">Salmon Avo Roll</span><span class="item-price">$8.99</span><span class="item-desc">Fresh salmon and avocado roll</span></li>
+            <li class="menu-item"><span class="item-name">Tuna Avo Roll</span><span class="item-price">$8.99</span><span class="item-desc">Fresh tuna and avocado roll</span></li>
+            <li class="menu-item"><span class="item-name">Chopped Scallop Roll</span><span class="item-price">$8.99</span><span class="item-desc">Seasoned chopped scallop with cucumber</span></li>
+            <li class="menu-item spicy"><span class="item-name"><span class="spicy-dot"></span> Spicy Chopped Scallop Roll</span><span class="item-price">$9.99</span><span class="item-desc">Chopped scallop with spicy mayo and cucumber</span></li>
+            <li class="menu-item"><span class="item-name">Smoked Salmon Roll</span><span class="item-price">$8.95</span><span class="item-desc">Cold-smoked salmon with cream cheese and cucumber</span></li>
+            <li class="menu-item"><span class="item-name">Deep Fried California Roll</span><span class="item-price">$9.25</span><span class="item-desc">California roll battered and deep fried, crispy</span></li>
+            <li class="menu-item"><span class="item-name">Unagi Roll</span><span class="item-price">$9.95</span><span class="item-desc">Grilled eel with cucumber and tare sauce</span></li>
+            <li class="menu-item"><span class="item-name">Long Dyna Roll</span><span class="item-price">$10.25</span><span class="item-desc">Prawn tempura, cucumber, avocado, extended roll</span></li>
+            <li class="menu-item"><span class="item-name">Nothing Roll</span><span class="item-price">$8.25</span><span class="item-desc">Inside-out roll with seasoned rice and nori</span></li>
+            <li class="menu-item veg"><span class="item-name"><span class="veg-badge">V</span> Asparagus Roll</span><span class="item-price">$8.25</span><span class="item-desc">Crisp asparagus with avocado and cucumber</span></li>
+          </ul>
+        </div>
+
+        <!-- LARGE ROLL -->
+        <div class="menu-category" data-category="large-roll">
+          <h3 class="category-title">Large Roll</h3>
+          <ul class="menu-list">
+            <li class="menu-item veg"><span class="item-name"><span class="veg-badge">V</span> Vegetable Roll</span><span class="item-price">$8.50</span><span class="item-desc">Avocado, cucumber, yam, and pickled radish</span></li>
+            <li class="menu-item veg"><span class="item-name"><span class="veg-badge">V</span> Yam Tempura Roll</span><span class="item-price">$8.99</span><span class="item-desc">Sweet yam tempura with avocado and cucumber</span></li>
+            <li class="menu-item"><span class="item-name">Dynamite Roll</span><span class="item-price">$8.99</span><span class="item-desc">Prawn tempura, cucumber, avocado, masago, spicy mayo</span></li>
+            <li class="menu-item"><span class="item-name">BC Roll</span><span class="item-price">$9.99</span><span class="item-desc">Salmon, cucumber, and green onion with sesame</span></li>
+            <li class="menu-item"><span class="item-name">Salamite Roll</span><span class="item-price">$9.99</span><span class="item-desc">Salmon and dynamite combination large roll</span></li>
+            <li class="menu-item"><span class="item-name">Chicken Roll</span><span class="item-price">$9.95</span><span class="item-desc">Teriyaki chicken, avocado, and cucumber</span></li>
+            <li class="menu-item"><span class="item-name">Beef Roll</span><span class="item-price">$9.95</span><span class="item-desc">Teriyaki beef, avocado, and cucumber</span></li>
+            <li class="menu-item"><span class="item-name">Futo Maki Roll</span><span class="item-price">$9.95</span><span class="item-desc">Traditional thick roll with egg, crab, cucumber, and pickled vegetables</span></li>
+          </ul>
+        </div>
+
+        <!-- SPECIAL ROLL -->
+        <div class="menu-category" data-category="special-roll">
+          <h3 class="category-title">Special Roll</h3>
+          <ul class="menu-list">
+            <li class="menu-item"><span class="item-name">Alaska Roll</span><span class="item-price">$11.95</span><span class="item-desc">Salmon, avocado, cucumber topped with salmon and masago</span></li>
+            <li class="menu-item"><span class="item-name">Crazy Boy Roll</span><span class="item-price">$12.25</span><span class="item-desc">Dynamite roll topped with spicy tuna and masago</span></li>
+            <li class="menu-item"><span class="item-name">Crazy Girl Roll</span><span class="item-price">$16.55</span><span class="item-desc">California roll topped with mango, salmon, and sweet sauce</span></li>
+            <li class="menu-item"><span class="item-name">Mozza Chicken Roll</span><span class="item-price">$16.55</span><span class="item-desc">Chicken and mozzarella deep fried roll with teriyaki sauce</span></li>
+            <li class="menu-item spicy"><span class="item-name"><span class="spicy-dot"></span> Jalapeno Roll</span><span class="item-price">$16.95</span><span class="item-desc">Salmon or tuna roll topped with jalapeno and spicy sauce</span></li>
+            <li class="menu-item"><span class="item-name">Philadelphia Roll</span><span class="item-price">$15.25</span><span class="item-desc">Smoked salmon, cream cheese, and cucumber</span></li>
+            <li class="menu-item"><span class="item-name">Mango Paradise Roll</span><span class="item-price">$15.99</span><span class="item-desc">Salmon and avocado roll topped with fresh mango</span></li>
+            <li class="menu-item"><span class="item-name">Las Vegas Roll</span><span class="item-price">$16.25</span><span class="item-desc">Deep fried California roll topped with spicy tuna</span></li>
+            <li class="menu-item"><span class="item-name">Tiger Roll</span><span class="item-price">$16.99</span><span class="item-desc">Prawn tempura roll topped with avocado and torched salmon</span></li>
+            <li class="menu-item"><span class="item-name">Golden Roll</span><span class="item-price">$16.55</span><span class="item-desc">Baked roll with crab, avocado, and golden mayo topping</span></li>
+            <li class="menu-item"><span class="item-name">Victoria Roll</span><span class="item-price">$16.55</span><span class="item-desc">Salmon and avocado roll topped with tuna and masago</span></li>
+            <li class="menu-item"><span class="item-name">Snow White Roll</span><span class="item-price">$16.55</span><span class="item-desc">Crab and avocado roll topped with white tuna and ponzu</span></li>
+            <li class="menu-item spicy"><span class="item-name"><span class="spicy-dot"></span> Volcano Roll</span><span class="item-price">$16.99</span><span class="item-desc">Baked roll topped with spicy scallop and masago</span></li>
+            <li class="menu-item"><span class="item-name">Crunch Double Dynamite Roll</span><span class="item-price">$19.25</span><span class="item-desc">Double prawn tempura roll with crunchy topping and spicy mayo</span></li>
+            <li class="menu-item spicy"><span class="item-name"><span class="spicy-dot"></span> Magma Roll</span><span class="item-price">$18.99</span><span class="item-desc">Baked roll with spicy crab, masago, and sriracha drizzle</span></li>
+            <li class="menu-item"><span class="item-name">Salmon Aburi Roll</span><span class="item-price">$17.25</span><span class="item-desc">Roll topped with flame-torched salmon and sauce</span></li>
+            <li class="menu-item"><span class="item-name">Tuna Aburi Roll</span><span class="item-price">$17.25</span><span class="item-desc">Roll topped with flame-torched tuna and sauce</span></li>
+            <li class="menu-item"><span class="item-name">Red Dragon Roll</span><span class="item-price">$17.99</span><span class="item-desc">Spicy tuna roll topped with red tuna and chili sauce</span></li>
+            <li class="menu-item"><span class="item-name">Rainbow Roll</span><span class="item-price">$16.99</span><span class="item-desc">California roll topped with assorted fish and avocado</span></li>
+            <li class="menu-item"><span class="item-name">Caterpillar Roll</span><span class="item-price">$16.99</span><span class="item-desc">Unagi and cucumber roll topped with sliced avocado</span></li>
+            <li class="menu-item spicy"><span class="item-name"><span class="spicy-dot"></span> Hot Night Roll</span><span class="item-price">$16.99</span><span class="item-desc">Spicy tuna and cucumber roll with jalapeno and sriracha</span></li>
+            <li class="menu-item"><span class="item-name">Hurricane Roll</span><span class="item-price">$16.99</span><span class="item-desc">Prawn tempura and avocado roll with tropical mango sauce</span></li>
+            <li class="menu-item"><span class="item-name">Dragon Roll</span><span class="item-price">$17.55</span><span class="item-desc">Prawn tempura roll topped with avocado and eel sauce</span></li>
+            <li class="menu-item"><span class="item-name">Hockey Puck Roll</span><span class="item-price">$18.99</span><span class="item-desc">Deep fried roll with crab and avocado, round shaped</span></li>
+            <li class="menu-item"><span class="item-name">Little Mountain Roll</span><span class="item-price">$18.99</span><span class="item-desc">Signature roll with salmon, tuna, avocado, and special sauce</span></li>
+            <li class="menu-item"><span class="item-name">Tarantula Roll</span><span class="item-price">$19.99</span><span class="item-desc">Soft shell crab roll with avocado and spicy mayo</span></li>
+            <li class="menu-item"><span class="item-name">Chef's Sushi Pizza</span><span class="item-price">$23.95</span><span class="item-desc">Crispy rice base topped with assorted sashimi and sauces</span></li>
+          </ul>
+        </div>
+
+        <!-- TERIYAKI -->
+        <div class="menu-category" data-category="teriyaki">
+          <h3 class="category-title">Teriyaki</h3>
+          <p class="category-note">Served with rice and miso soup</p>
+          <ul class="menu-list">
+            <li class="menu-item veg"><span class="item-name"><span class="veg-badge">V</span> Tofu Teriyaki</span><span class="item-price">$17.95</span><span class="item-desc">Grilled tofu glazed with sweet teriyaki sauce</span></li>
+            <li class="menu-item"><span class="item-name">Chicken Teriyaki</span><span class="item-price">$18.95</span><span class="item-desc">Grilled chicken breast with sweet teriyaki glaze</span></li>
+            <li class="menu-item"><span class="item-name">Beef Teriyaki</span><span class="item-price">$18.95</span><span class="item-desc">Grilled beef with sweet teriyaki glaze</span></li>
+            <li class="menu-item"><span class="item-name">Salmon Teriyaki</span><span class="item-price">$20.95</span><span class="item-desc">Grilled salmon fillet with sweet teriyaki glaze</span></li>
+            <li class="menu-item"><span class="item-name">Seafood Teriyaki</span><span class="item-price">$21.95</span><span class="item-desc">Grilled assorted seafood with teriyaki glaze</span></li>
+          </ul>
+        </div>
+
+        <!-- NOODLE -->
+        <div class="menu-category" data-category="noodle">
+          <h3 class="category-title">Noodle</h3>
+          <ul class="menu-list">
+            <li class="menu-item veg"><span class="item-name"><span class="veg-badge">V</span> Vege Udon</span><span class="item-price">$15.99</span><span class="item-desc">Thick udon noodles in dashi broth with vegetables</span></li>
+            <li class="menu-item"><span class="item-name">Chicken Udon</span><span class="item-price">$16.99</span><span class="item-desc">Thick udon noodles in dashi broth with chicken</span></li>
+            <li class="menu-item"><span class="item-name">Beef Udon</span><span class="item-price">$16.99</span><span class="item-desc">Thick udon noodles in dashi broth with beef</span></li>
+            <li class="menu-item"><span class="item-name">Tempura Udon</span><span class="item-price">$17.55</span><span class="item-desc">Udon in dashi broth topped with prawn tempura</span></li>
+            <li class="menu-item"><span class="item-name">Seafood Udon</span><span class="item-price">$19.99</span><span class="item-desc">Udon in dashi broth with assorted seafood</span></li>
+            <li class="menu-item veg"><span class="item-name"><span class="veg-badge">V</span> Vege Yakisoba/Yakiudon</span><span class="item-price">$16.95</span><span class="item-desc">Stir-fried noodles with vegetables and savory sauce</span></li>
+            <li class="menu-item"><span class="item-name">Chicken or Beef Yakisoba/Yakiudon</span><span class="item-price">$17.95</span><span class="item-desc">Stir-fried noodles with chicken or beef and vegetables</span></li>
+            <li class="menu-item spicy"><span class="item-name"><span class="spicy-dot"></span> Korean Ramen</span><span class="item-price">$14.99</span><span class="item-desc">Spicy Korean-style ramen in rich chili broth</span></li>
+            <li class="menu-item spicy"><span class="item-name"><span class="spicy-dot"></span> Chicken Korean Ramen</span><span class="item-price">$16.99</span><span class="item-desc">Spicy Korean ramen with tender chicken pieces</span></li>
+            <li class="menu-item spicy"><span class="item-name"><span class="spicy-dot"></span> Beef Korean Ramen</span><span class="item-price">$16.99</span><span class="item-desc">Spicy Korean ramen with seasoned beef slices</span></li>
+          </ul>
+        </div>
+
+        <!-- DON -->
+        <div class="menu-category" data-category="don">
+          <h3 class="category-title">Don</h3>
+          <p class="category-note">Served with miso soup</p>
+          <ul class="menu-list">
+            <li class="menu-item"><span class="item-name">Chicken or Beef Don</span><span class="item-price">$17.99</span><span class="item-desc">Teriyaki chicken or beef over a bowl of steamed rice</span></li>
+            <li class="menu-item"><span class="item-name">Salmon Don</span><span class="item-price">$20.50</span><span class="item-desc">Sliced fresh salmon over seasoned sushi rice</span></li>
+            <li class="menu-item"><span class="item-name">Tuna Don</span><span class="item-price">$20.50</span><span class="item-desc">Sliced fresh tuna over seasoned sushi rice</span></li>
+            <li class="menu-item"><span class="item-name">Salmon &amp; Tuna Don</span><span class="item-price">$20.50</span><span class="item-desc">Fresh salmon and tuna over seasoned sushi rice</span></li>
+            <li class="menu-item"><span class="item-name">Unagi Don</span><span class="item-price">$21.95</span><span class="item-desc">Grilled freshwater eel with tare sauce over rice</span></li>
+            <li class="menu-item"><span class="item-name">Chirashi Don</span><span class="item-price">$25.95</span><span class="item-desc">Assorted sashimi scattered over seasoned sushi rice</span></li>
+            <li class="menu-item spicy"><span class="item-name"><span class="spicy-dot"></span> Spicy Chirashi Don</span><span class="item-price">$26.95</span><span class="item-desc">Assorted sashimi over sushi rice with spicy sauce</span></li>
+            <li class="menu-item"><span class="item-name">Chicken Mayo Don</span><span class="item-price">$17.50</span><span class="item-desc">Grilled chicken with Japanese mayo over steamed rice</span></li>
+            <li class="menu-item"><span class="item-name">Karaage Don</span><span class="item-price">$16.50</span><span class="item-desc">Japanese fried chicken pieces over steamed rice</span></li>
+            <li class="menu-item spicy"><span class="item-name"><span class="spicy-dot"></span> Spicy Chicken Karaage Don</span><span class="item-price">$17.50</span><span class="item-desc">Spicy Japanese fried chicken over steamed rice</span></li>
+          </ul>
+        </div>
+
+        <!-- KOREAN SPECIAL -->
+        <div class="menu-category" data-category="korean">
+          <h3 class="category-title">Korean Special</h3>
+          <ul class="menu-list">
+            <li class="menu-item spicy"><span class="item-name"><span class="spicy-dot"></span> Seafood Soon Tofu Jeegae</span><span class="item-price">$17.55</span><span class="item-desc">Spicy soft tofu stew with assorted seafood</span></li>
+            <li class="menu-item spicy"><span class="item-name"><span class="spicy-dot"></span> Bibim Bap</span><span class="item-price">$18.55</span><span class="item-desc">Mixed rice bowl with vegetables, egg, and gochujang</span></li>
+            <li class="menu-item spicy"><span class="item-name"><span class="spicy-dot"></span> Hot Stone Bibim Bap</span><span class="item-price">$19.55</span><span class="item-desc">Sizzling stone bowl mixed rice with vegetables and gochujang</span></li>
+          </ul>
+        </div>
+
+        <!-- SUSHI COMBO -->
+        <div class="menu-category" data-category="combo">
+          <h3 class="category-title">Sushi Combo</h3>
+          <ul class="menu-list">
+            <li class="menu-item"><span class="item-name">Kid's Combo</span><span class="item-price">$9.25</span><span class="item-desc">California roll and teriyaki chicken for younger guests</span></li>
+            <li class="menu-item"><span class="item-name">Maki Combo</span><span class="item-price">$16.95</span><span class="item-desc">Assorted maki rolls with miso soup</span></li>
+            <li class="menu-item veg"><span class="item-name"><span class="veg-badge">V</span> Vege Roll Combo</span><span class="item-price">$18.99</span><span class="item-desc">Vegetarian rolls with avocado, yam, and cucumber</span></li>
+            <li class="menu-item"><span class="item-name">Cali Combo</span><span class="item-price">$16.99</span><span class="item-desc">California rolls with miso soup</span></li>
+            <li class="menu-item"><span class="item-name">Dyna Combo</span><span class="item-price">$16.99</span><span class="item-desc">Dynamite rolls with miso soup</span></li>
+            <li class="menu-item"><span class="item-name">BC Combo</span><span class="item-price">$18.99</span><span class="item-desc">BC rolls with miso soup</span></li>
+            <li class="menu-item"><span class="item-name">Nigiri Combo</span><span class="item-price">$27.99</span><span class="item-desc">Chef's selection of nigiri pieces with miso soup</span></li>
+            <li class="menu-item"><span class="item-name">Salmon Love Combo</span><span class="item-price">$25.95</span><span class="item-desc">Salmon nigiri, salmon roll, and salmon sashimi</span></li>
+            <li class="menu-item"><span class="item-name">Tuna Lover Combo</span><span class="item-price">$25.95</span><span class="item-desc">Tuna nigiri, tuna roll, and tuna sashimi</span></li>
+            <li class="menu-item spicy"><span class="item-name"><span class="spicy-dot"></span> Spicy Combo</span><span class="item-price">$25.95</span><span class="item-desc">Assorted spicy rolls and nigiri with miso soup</span></li>
+            <li class="menu-item"><span class="item-name">Favorite Combo</span><span class="item-price">$23.99</span><span class="item-desc">Mix of popular rolls and nigiri with miso soup</span></li>
+            <li class="menu-item"><span class="item-name">Little Mountain Combo</span><span class="item-price">$24.99</span><span class="item-desc">Signature selection of rolls and nigiri with miso soup</span></li>
+            <li class="menu-item"><span class="item-name">BBQ Combo</span><span class="item-price">$28.99</span><span class="item-desc">Grilled and torched rolls with BBQ-style toppings</span></li>
+            <li class="menu-item"><span class="item-name">Deep Combo</span><span class="item-price">$28.99</span><span class="item-desc">Assorted deep fried rolls with dipping sauces</span></li>
+          </ul>
+        </div>
+
+        <!-- PARTY TRAY -->
+        <div class="menu-category" data-category="party-tray">
+          <h3 class="category-title">Party Tray</h3>
+          <ul class="menu-list">
+            <li class="menu-item"><span class="item-name">Roll Tray 47pcs</span><span class="item-price">$58.99</span><span class="item-desc">Assorted maki rolls, great for sharing</span></li>
+            <li class="menu-item"><span class="item-name">Cali &amp; Dyna Tray 52pcs</span><span class="item-price">$60.99</span><span class="item-desc">California and dynamite rolls party platter</span></li>
+            <li class="menu-item"><span class="item-name">Roll &amp; Nigiri Tray 46pcs</span><span class="item-price">$70.99</span><span class="item-desc">Assorted rolls and nigiri pieces party platter</span></li>
+            <li class="menu-item"><span class="item-name">Roll Nigiri &amp; Sashimi Tray 49pcs</span><span class="item-price">$77.95</span><span class="item-desc">Rolls, nigiri, and fresh sashimi deluxe party platter</span></li>
+          </ul>
+        </div>
+
+        <!-- LUNCH SET -->
+        <div class="menu-category" data-category="lunch-set">
+          <h3 class="category-title">Lunch Set</h3>
+          <p class="category-note">Until 3:00pm. Comes with tempura, rice, salad, miso.</p>
+          <ul class="menu-list">
+            <li class="menu-item veg"><span class="item-name"><span class="veg-badge">V</span> Vege Set</span><span class="item-price">$17.99</span><span class="item-desc">Vegetarian rolls or dishes with tempura, rice, salad, miso</span></li>
+            <li class="menu-item"><span class="item-name">Set A</span><span class="item-price">$17.99</span><span class="item-desc">California roll with tempura, rice, salad, miso</span></li>
+            <li class="menu-item"><span class="item-name">Set B</span><span class="item-price">$19.99</span><span class="item-desc">Salmon or dynamite roll with tempura, rice, salad, miso</span></li>
+            <li class="menu-item"><span class="item-name">Set C</span><span class="item-price">$21.99</span><span class="item-desc">Nigiri or special roll with tempura, rice, salad, miso</span></li>
+          </ul>
+        </div>
+
+        <!-- DINNER SET -->
+        <div class="menu-category" data-category="dinner-set">
+          <h3 class="category-title">Dinner Set</h3>
+          <p class="category-note">Comes with miso soup, tempura, rice, salad.</p>
+          <ul class="menu-list">
+            <li class="menu-item veg"><span class="item-name"><span class="veg-badge">V</span> Vege Set</span><span class="item-price">$24.99</span><span class="item-desc">Vegetarian rolls with miso soup, tempura, rice, salad</span></li>
+            <li class="menu-item"><span class="item-name">Set A</span><span class="item-price">$24.99</span><span class="item-desc">California roll with miso soup, tempura, rice, salad</span></li>
+            <li class="menu-item"><span class="item-name">Set B</span><span class="item-price">$26.99</span><span class="item-desc">Salmon or dynamite roll with miso soup, tempura, rice, salad</span></li>
+            <li class="menu-item"><span class="item-name">Set C</span><span class="item-price">$27.99</span><span class="item-desc">Nigiri selection with miso soup, tempura, rice, salad</span></li>
+            <li class="menu-item"><span class="item-name">Set D</span><span class="item-price">$29.99</span><span class="item-desc">Premium sashimi and rolls with miso soup, tempura, rice, salad</span></li>
+          </ul>
+        </div>
+
+        <!-- DRINKS & LIQUOR -->
+        <div class="menu-category" data-category="drinks">
+          <h3 class="category-title">Drinks</h3>
+          <ul class="menu-list">
+            <li class="menu-item"><span class="item-name">Pop</span><span class="item-price">$2.95</span><span class="item-desc">Coke, Pepsi, Sprite, Root Beer, Ginger Ale, Iced Tea</span></li>
+            <li class="menu-item"><span class="item-name">Juice</span><span class="item-price">$3.50</span><span class="item-desc">Apple or Orange</span></li>
+            <li class="menu-item"><span class="item-name">Japanese Soft Drink</span><span class="item-price">$3.95</span><span class="item-desc">Ramune or imported Japanese carbonated beverage</span></li>
+          </ul>
+          <h3 class="category-title" style="margin-top: 2rem;">Liquor</h3>
+          <ul class="menu-list">
+            <li class="menu-item"><span class="item-name">Domestic Beer</span><span class="item-price">$6.95</span><span class="item-desc">Canadian lager or ale on draft or bottle</span></li>
+            <li class="menu-item"><span class="item-name">Imported Beer (Sapporo, Asahi)</span><span class="item-price">$8.50</span><span class="item-desc">Japanese imported lager, Sapporo or Asahi</span></li>
+            <li class="menu-item"><span class="item-name">Sake</span><span class="item-price">small $7.95 / large $13.95</span><span class="item-desc">Traditional Japanese rice wine, served warm</span></li>
+            <li class="menu-item"><span class="item-name">Cold Sake</span><span class="item-price">$15.95</span><span class="item-desc">Chilled Japanese rice wine, smooth and clean</span></li>
+            <li class="menu-item"><span class="item-name">Premium Sake</span><span class="item-price">$17.95</span><span class="item-desc">Higher-grade Japanese rice wine, refined flavour</span></li>
+            <li class="menu-item"><span class="item-name">Super Premium Sake</span><span class="item-price">$23.95</span><span class="item-desc">Top-grade junmai daiginjo sake, delicate and aromatic</span></li>
+            <li class="menu-item"><span class="item-name">Korean Sake Soju</span><span class="item-price">$16.95</span><span class="item-desc">Korean distilled spirit, light and clean taste</span></li>
+            <li class="menu-item"><span class="item-name">Korean Premium Sake</span><span class="item-price">$19.95</span><span class="item-desc">Premium Korean rice wine, smooth and refined</span></li>
+            <li class="menu-item"><span class="item-name">Wine</span><span class="item-price">$8.95</span><span class="item-desc">House red or white wine by the glass</span></li>
+          </ul>
+        </div>
+
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT / FOOTER -->
+  <footer class="contact-section" id="contact">
+    <div class="container">
+      <div class="section-header section-header--light">
+        <span class="section-header-line" aria-hidden="true"></span>
+        <h2 class="section-title section-title--light">Find Us</h2>
+        <span class="section-header-line" aria-hidden="true"></span>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          </div>
+          <h3>Address</h3>
+          <p>46675 Yale Road #102<br>Chilliwack, BC V2P 7Z4</p>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>Hours</h3>
+          <p>Open Daily<br>10:30 am &ndash; 9:30 pm</p>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <h3>Phone</h3>
+          <p><a href="tel:+16043925588">(604) 392-5588</a></p>
+        </div>
+      </div>
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2621.5!2d-121.9453!3d49.1577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5484329e0b3ddf21%3A0xb8a26a8b1c6b8b8e!2s46675%20Yale%20Rd%20%23102%2C%20Chilliwack%2C%20BC%20V2P%207Z4!5e0!3m2!1sen!2sca!4v1710000000000"
+          width="100%"
+          height="300"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Little Mountain Sushi Location">
+        </iframe>
+      </div>
+      <div class="footer-bottom">
+        <img src="logo-clean.png" alt="" class="footer-logo" aria-hidden="true">
+        <p>&copy; 2025 Little Mountain Sushi. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
